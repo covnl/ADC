@@ -1,0 +1,88 @@
+/* This is a linker parameter file for the MC9S12P128 */
+NAMES END /* CodeWarrior will pass all the needed files to the linker by command line. But here you may add your own files too. */
+
+SEGMENTS  /* Here all RAM/ROM areas of the device are listed. Used in PLACEMENT below. */
+
+/* Register space  */
+/*    IO_SEG        = PAGED         0x0000 TO   0x03FF; intentionally not defined */
+
+/* RAM */
+    //  RAM           = READ_WRITE    0x2800 TO   0x3FFF;
+      RAM_2800           = READ_WRITE    0x2800 TO   0x28FF; // 1024 回写数据RAM区 (剩余256byte，移出768byte给CAN缓冲区) 
+      RAM_2900           = READ_WRITE    0x2900 TO   0X2BFF; // 768 CAN总线缓冲区 2015-4-16添加
+      RAM_2C00           = READ_WRITE    0x2C00 TO   0x307F; // 1024B 在线标定数据区 + 128 B
+      RAM_3000           = READ_WRITE    0x3080 TO   0x3EFF; // 3700B 的常用RAM区  - 128 B
+      RAM_3F00           = READ_WRITE    0x3F00 TO   0x3FFF; // 256B 的堆栈区 
+/* D-Flash */
+    //  DFLASH        = READ_ONLY   0x400 TO 0x13FF;
+      DFLASH_400       = READ_ONLY  0x10400  TO 0x107FF;  /* 1024 write back data1 */
+      DFLASH_800       = READ_ONLY  0x10800  TO 0x108FF;  /* 256 bytes 存放各种标志位 */
+      DFLASH_900       = READ_ONLY  0x10900  TO 0x10CFF;  /* 保留 */
+      DFLASH_D00       = READ_ONLY  0x10D00  TO 0x10FFF;  /* 保留 */
+      
+
+/* non-paged FLASHs */
+      ROM_2000      = READ_ONLY     0x2000 TO   0x21FF; /* 5K */
+      ROM_4000      = READ_ONLY     0x4000 TO   0x7FFF; /* 16K */
+    //  ROM_8000      = READ_ONLY     0x8000 TO   0xBFFF; /* 16k */
+      ROM_C000      = READ_ONLY     0xC000 TO   0xEDFF; /* 16K */
+     // ROM_E000      = READ_ONLY     0xE000 TO   0xFEFF; /* 7K+768B */
+ /*   VECTORS       = READ_ONLY     0xFF00 TO   0xFFFF; intentionally not defined: used for VECTOR commands below */
+   //OSVECTORS      = READ_ONLY     0xFF8C TO   0xFFFF;   /* OSEK interrupt vectors (use your vector.o) */
+
+/* paged FLASH:                     0x8000 TO   0xBFFF; addressed through PPAGE */
+      PAGE_08       = READ_ONLY   0x088000 TO 0x08BFFF;
+      PAGE_09       = READ_ONLY   0x098000 TO 0x09BFFF;
+      PAGE_0A       = READ_ONLY   0x0A8000 TO 0x0ABFFF;
+      PAGE_0B       = READ_ONLY   0x0B8000 TO 0x0BAFFF;
+      PAGE_0C       = READ_ONLY   0x0C8000 TO 0x0C93FF;
+      PAGE_0C_A800  = READ_ONLY   0x0CA800 TO 0x0CBFFF;
+      PAGE_0E       = READ_ONLY   0x0E8000 TO 0x0EBFFF;     
+      
+/*    PAGE_0D       = READ_ONLY   0x0D8000 TO 0x0DBFFF; not used: equivalent to ROM_4000 */
+/*    PAGE_0F       = READ_ONLY   0x0F8000 TO 0x0FBEFF; not used: equivalent to ROM_C000 */
+END
+
+PLACEMENT /* here all predefined and user segments are placed into the SEGMENTS defined above. */
+      _PRESTART,              /* Used in HIWARE format: jump to _Startup at the code start */
+      STARTUP,                /* startup data structures */
+      ROM_VAR,                /* constant variables */
+      STRINGS,                /* string literals */
+      VIRTUAL_TABLE_SEGMENT,  /* C++ virtual table segment */
+    //.ostext,                /* OSEK */
+      NON_BANKED,             /* runtime routines which must not be banked */
+      MY_CODE_ROM,            /* copy down information: how to initialize variables */
+      COPY                     /* in case you want to use ROM_4000 here as well, make sure
+                               that all files (incl. library files) are compiled with the
+                                 option: -OnB=b */
+                        INTO  ROM_C000/*, ROM_1400, ROM_4000*/;
+      CALC_NVM          INTO  ROM_4000;                  
+      DEFAULT_ROM       INTO  PAGE_08,PAGE_09,PAGE_0A,PAGE_0B,PAGE_0C,PAGE_0C_A800,PAGE_0E;//, PAGE_0C_A800, PAGE_0E ;                       //
+    //.stackstart,            /* eventually used for OSEK kernel awareness: Main-Stack Start */
+   //   SSTACK,                 /* allocate stack first to avoid overwriting variables on overflow */
+    //.stackend,              /* eventually used for OSEK kernel awareness: Main-Stack End */
+    DEFAULT_RAM,
+    COMMON_RAM          INTO  RAM_3000;//默认RAM区        
+    SSTACK              INTO  RAM_3F00;//堆栈          
+    WRITE_BACK_RAM      INTO  RAM_2800;//故障码RAM区 + NVM数据 + 自学习表格     
+    WRITE_BACK_NVM      INTO  DFLASH_400;
+    CALC_RAM            INTO  RAM_2C00;
+    DATA_BUFFER_RAM     INTO  RAM_2900;
+ 
+  //.vectors            INTO  OSVECTORS; /* OSEK */
+END
+
+ENTRIES /* keep the following unreferenced variables */
+    /* OSEK: always allocate the vector table and all dependent objects */
+  //_vectab OsBuildNumber _OsOrtiStackStart _OsOrtiStart
+END
+
+STACKSIZE 0x100
+
+  //VECTOR ADDRESS 0xFEFE   _Startup
+VECTOR 2 COP_Isr  
+VECTOR 1 Clock_Monitor_Isr
+VECTOR 0 _Startup /* reset vector: this is the default entry point for a C/C++ application. */
+//VECTOR 0 Entry  /* reset vector: this is the default entry point for an Assembly application. */
+//INIT Entry      /* for assembly applications: that this is as well the initialization entry point */
+

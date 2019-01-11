@@ -1,0 +1,2534 @@
+RAM_Offset 0
+PFLASH_Offset 0
+Version_of_file 1203
+MEASUREMENT_ADDRESS_TYPE 16
+DEVICE_TYPE 1
+/******************************************************************************
+ *
+ *  ASAP2 file:     Controller.a2l
+ *
+ * Real-Time Workshop code generation for Simulink model "Controller.mdl".
+ *
+ * Model Version              : 1.0.1
+ * Real-Time Workshop version : 6.5  (R2006b)  03-Aug-2006
+ * C source code generated on : Mon Jun 15 15:15:09 2015
+ *
+ * (add additional file header information here)
+ *
+ ******************************************************************************/
+
+ASAP2_VERSION  1 31   /* Version 1.31 */
+
+
+
+
+/begin PROJECT ProjectName "Project Comment Goes Here"
+  
+  /begin HEADER "Header Comments go here"
+    
+  /end HEADER
+  
+  
+  /begin MODULE ModuleName  "Module Comment Goes Here"
+    
+    /begin MOD_PAR "MOD PAR Comment Goes Here"
+      
+    /end MOD_PAR
+    
+    /begin MOD_COMMON  "Mod Common Comment Here" 
+      BYTE_ORDER     MSB_FIRST
+    /end MOD_COMMON
+    
+    /begin RECORD_LAYOUT Scalar_BOOLEAN
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_SWORD
+      FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Scalar_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    
+    /begin RECORD_LAYOUT Lookup1D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_SLONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT32_IEEE
+      AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_FLOAT64_IEEE
+      FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup1D_X_FLOAT64_IEEE
+      AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UBYTE
+      FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UBYTE
+      AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_BYTE
+      FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_BYTE
+      AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_UWORD
+      FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_UWORD
+      AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_WORD
+      FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_WORD
+      AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_ULONG
+      FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_ULONG
+      AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_LONG
+      FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_LONG
+      AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT32_IEEE
+      FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT32_IEEE
+      AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_FLOAT64_IEEE
+      FNC_VALUES  1  FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end   RECORD_LAYOUT
+    
+    /begin RECORD_LAYOUT Lookup2D_X_FLOAT64_IEEE
+      AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end   RECORD_LAYOUT
+
+
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Angle_Broadcast_FrameType
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x4009 
+      /* Record Layout          */      Scalar_UBYTE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_1 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Acceleration_Broadcast_FrameType
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x4010 
+      /* Record Layout          */      Scalar_UBYTE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_1 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Angle_Broadcast_CANID
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x400A 
+      /* Record Layout          */      Scalar_ULONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_1 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      4294967295
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Acceleration_Broadcast_CANID
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x4011 
+      /* Record Layout          */      Scalar_ULONG 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_1 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      4294967295
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_CAN0_BaudRate
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x401C 
+      /* Record Layout          */      Scalar_UBYTE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_1 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Acc_offset_X
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x4000 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_1 
+      /* Lower Limit            */      -32768 
+      /* Upper Limit            */      32767
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Acc_offset_Y
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x4002 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_1 
+      /* Lower Limit            */      -32768 
+      /* Upper Limit            */      32767
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Acc_offset_Z
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x4004 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_1 
+      /* Lower Limit            */      -32768 
+      /* Upper Limit            */      32767
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_SAEJ1939_Broadcast_En
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x4006 
+      /* Record Layout          */      Scalar_UBYTE 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_1 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Angle_Broadcast_Rate
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x4007 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_171 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Acceleration_Broadcast_Rate
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x400E 
+      /* Record Layout          */      Scalar_UWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_171 
+      /* Lower Limit            */      0 
+      /* Upper Limit            */      65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Pitch_offset
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x4015 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_172 
+      /* Lower Limit            */      -32768 
+      /* Upper Limit            */      32767
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Roll_offset
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x4017 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_172 
+      /* Lower Limit            */      -32768 
+      /* Upper Limit            */      32767
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC 
+      /* Name                   */      VAL_Acc_g
+      /* Long Identifier        */      " "
+      /* Type                   */      VALUE 
+      /* Memory Address         */      0x4019 
+      /* Record Layout          */      Scalar_SWORD 
+      /* Maximum Difference     */      0 
+      /* Conversion Method      */      COMPU_METHOD_1 
+      /* Lower Limit            */      -32768 
+      /* Upper Limit            */      32767
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT
+      /* Name                   */      Roll_Angle_Output
+      /* Long identifier        */      " "
+      /* Data type              */      SWORD
+      /* Conversion method      */      COMPU_METHOD_172
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -32768
+      /* Upper limit            */      32767
+      ECU_ADDRESS                       0x3A0A
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      Pitch_Angle_Output
+      /* Long identifier        */      " "
+      /* Data type              */      SWORD
+      /* Conversion method      */      COMPU_METHOD_172
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -32768
+      /* Upper limit            */      32767
+      ECU_ADDRESS                       0x3A0C
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      Y_acc
+      /* Long identifier        */      " "
+      /* Data type              */      SWORD
+      /* Conversion method      */      COMPU_METHOD_173
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -32768
+      /* Upper limit            */      32767
+      ECU_ADDRESS                       0x3A1E
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      g_output
+      /* Long identifier        */      " "
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_1
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       0x3A1A
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      lastAx
+      /* Long identifier        */      " "
+      /* Data type              */      SWORD
+      /* Conversion method      */      COMPU_METHOD_1
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -32768
+      /* Upper limit            */      32767
+      ECU_ADDRESS                       0x39FC
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      lastAy
+      /* Long identifier        */      " "
+      /* Data type              */      SWORD
+      /* Conversion method      */      COMPU_METHOD_1
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -32768
+      /* Upper limit            */      32767
+      ECU_ADDRESS                       0x39FE
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      lastAz
+      /* Long identifier        */      " "
+      /* Data type              */      SWORD
+      /* Conversion method      */      COMPU_METHOD_1
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -32768
+      /* Upper limit            */      32767
+      ECU_ADDRESS                       0x3A00
+    /end MEASUREMENT
+
+    
+    
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      CUR_Customer_Inf
+      /* Long Identifier        */      "Customer infomation"
+      /* Characteristic Type    */      CURVE
+      /* Memory Address         */      0x4058
+      /* Record Layout          */      Lookup1D_UBYTE
+      /* Maxdiff                */      0
+      /* Conversion Method      */      COMPU_METHOD_1
+      /* Lower Limit            */      0
+      /* Upper Limit            */      255
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      NO_INPUT_QUANTITY
+        /* Conversion Method    */      COMPU_METHOD_1
+        /* Number of Axis Pts   */      18
+        /* Lower Limit          */      0
+        /* Upper Limit          */      255
+        AXIS_PTS_REF                    CUR_Customer_Index
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      CUR_Customer_Index
+      /* Long Identifier        */      "Customer infomation"
+      /* Memory Adress          */      0xCUR_Ta_uTa
+      /* Input Quantity         */      NO_INPUT_QUANTITY
+      /* Record Layout          */      Lookup1D_X_UBYTE
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      COMPU_METHOD_1
+      /* Number of Axis Pts     */      18
+      /* Lower Limit            */      0
+      /* Upper Limit            */      255
+    /end AXIS_PTS
+    
+    
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      CUR_Wf_Ldp
+      /* Long Identifier        */      "characteristic curve: fuel wall film, depenedent on Load predicted "
+      /* Characteristic Type    */      CURVE
+      /* Memory Address         */      0x4031
+      /* Record Layout          */      Lookup1D_UWORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      COMPU_METHOD_2
+      /* Lower Limit            */      0
+      /* Upper Limit            */      1.22878E+004
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      NO_INPUT_QUANTITY
+        /* Conversion Method    */      COMPU_METHOD_3
+        /* Number of Axis Pts   */      18
+        /* Lower Limit          */      0
+        /* Upper Limit          */      150
+        AXIS_PTS_REF                    BP_Wf_Ldp
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      BP_Wf_Ldp
+      /* Long Identifier        */      "break points, fuel wall film, depenedent on Load predicted"
+      /* Memory Adress          */      0xBP_dTaHotSta_TaOff
+      /* Input Quantity         */      NO_INPUT_QUANTITY
+      /* Record Layout          */      Lookup1D_X_UWORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      COMPU_METHOD_3
+      /* Number of Axis Pts     */      18
+      /* Lower Limit            */      0
+      /* Upper Limit            */      150
+    /end AXIS_PTS
+    
+    
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      CUR_fWmp_Tm
+      /* Long Identifier        */      "Char. Curve, warm-up factor, dependent on engine temp."
+      /* Characteristic Type    */      CURVE
+      /* Memory Address         */      0x42A7
+      /* Record Layout          */      Lookup1D_UBYTE
+      /* Maxdiff                */      0
+      /* Conversion Method      */      COMPU_METHOD_4
+      /* Lower Limit            */      0
+      /* Upper Limit            */      2
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      Tm
+        /* Conversion Method    */      COMPU_METHOD_5
+        /* Number of Axis Pts   */      12
+        /* Lower Limit          */      -40
+        /* Upper Limit          */      278
+        AXIS_PTS_REF                    BP_fWmp_Tm
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      BP_fWmp_Tm
+      /* Long Identifier        */      "prelookup break points, engine temperature  "
+      /* Memory Adress          */      0xBP_fwReSta_TmSta
+      /* Input Quantity         */      Tm
+      /* Record Layout          */      Lookup1D_X_UBYTE
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      COMPU_METHOD_5
+      /* Number of Axis Pts     */      12
+      /* Lower Limit            */      -40
+      /* Upper Limit            */      278
+    /end AXIS_PTS
+    
+    
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      CUR_fAst_TmSta
+      /* Long Identifier        */      "input<BP_fAst_TmSta>, after start enrichment factor"
+      /* Characteristic Type    */      CURVE
+      /* Memory Address         */      0x429B
+      /* Record Layout          */      Lookup1D_UBYTE
+      /* Maxdiff                */      0
+      /* Conversion Method      */      COMPU_METHOD_6
+      /* Lower Limit            */      0
+      /* Upper Limit            */      8
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      BP_fAst_TmSta
+        /* Conversion Method    */      COMPU_METHOD_5
+        /* Number of Axis Pts   */      12
+        /* Lower Limit          */      -40
+        /* Upper Limit          */      278
+        AXIS_PTS_REF                    BP_fAst_TmSta
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      BP_fAst_TmSta
+      /* Long Identifier        */      "input<TmSta>, break points,engine temperature at start "
+      /* Memory Adress          */      0xBP_fTexStat_dIga
+      /* Input Quantity         */      TmSta
+      /* Record Layout          */      Lookup1D_X_UBYTE
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      COMPU_METHOD_5
+      /* Number of Axis Pts     */      12
+      /* Lower Limit            */      -40
+      /* Upper Limit            */      278
+    /end AXIS_PTS
+    
+    /begin CHARACTERISTIC      
+      /* Name                   */      MAP_fVe_Map_N
+      /* Long Identifier        */      "Factor Volumatric Efficiency, dependent on pressure and engine speed"
+      /* Chracteristic Type     */      MAP
+      /* Memory Address         */      0x4333
+      /* Record Layout          */      Lookup2D_UWORD
+      /* Maxdiff                */      0
+      /* Conversion Method      */      COMPU_METHOD_7
+      /* Lower Limit            */      0
+      /* Upper Limit            */      2
+      /begin AXIS_DESCR                 
+        /* Description of Y-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      Pim
+        /* Conversion Method    */      COMPU_METHOD_8
+        /* Number of Axis Pts   */      16
+        /* Lower Limit          */      0
+        /* Upper Limit          */      2560
+        AXIS_PTS_REF                    BP_fVe_Map
+      /end AXIS_DESCR
+      /begin AXIS_DESCR                 
+        /* Description of X-Axis Points */
+        /* Axis Type            */      COM_AXIS
+        /* Reference to Input   */      N
+        /* Conversion Method    */      COMPU_METHOD_9
+        /* Number of Axis Pts   */      12
+        /* Lower Limit          */      0
+        /* Upper Limit          */      16383
+        AXIS_PTS_REF                    BP_fVe_N
+      /end AXIS_DESCR
+    /end CHARACTERISTIC
+    
+    /begin AXIS_PTS
+      /* Name                   */      BP_fVe_N
+      /* Long Identifier        */      "input<N>, break point, engine speed, for Volumatric Efficiency factor"
+      /* Memory Adress          */      0xBP_tEngOffReSta_TmOff
+      /* Input Quantity         */      N
+      /* Record Layout          */      Lookup2D_X_UWORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      COMPU_METHOD_9
+      /* Number of Axis Pts     */      12
+      /* Lower Limit            */      0
+      /* Upper Limit            */      16383
+    /end AXIS_PTS
+    
+    /begin AXIS_PTS
+      /* Name                   */      BP_fVe_Map
+      /* Long Identifier        */      "input<Map>, break point, manifold absolute pressure, for Volumatric Efficiency factor"
+      /* Memory Adress          */      0xBP_fVe_N
+      /* Input Quantity         */      Pim
+      /* Record Layout          */      Lookup2D_X_UWORD
+      /* Maximum Difference     */      0
+      /* Conversion Method      */      COMPU_METHOD_8
+      /* Number of Axis Pts     */      16
+      /* Lower Limit            */      0
+      /* Upper Limit            */      2560
+    /end AXIS_PTS
+   
+       /begin MEASUREMENT
+      /* Name                   */      RPM
+      /* Long identifier        */      "Engine speed"
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_7
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16383
+      ECU_ADDRESS                       0x30C0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      N
+      /* Long identifier        */      "Engine speed"
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_7
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16383
+      ECU_ADDRESS                       0x3B9A
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      MAP
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_12
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      102000
+      ECU_ADDRESS                       0x3B94
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      TPS
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_6
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      100
+      ECU_ADDRESS                       0x3B98
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      Tooth_Period
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_19
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      65535
+      ECU_ADDRESS                       0x3B85
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      LOAD
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_20
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      100
+      ECU_ADDRESS                       0x255A
+    /end MEASUREMENT
+
+
+    /begin MEASUREMENT
+      /* Name                   */      ECT
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -50
+      /* Upper limit            */      200
+      ECU_ADDRESS                       0x30C4
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      IAT
+      /* Long identifier        */      "Engine speed"
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -50
+      /* Upper limit            */      200
+      ECU_ADDRESS                       0x30C8
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      O2S
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      5
+      ECU_ADDRESS                       0x30E8
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      SPARK
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      -90
+      /* Upper limit            */      90
+      ECU_ADDRESS                       0x30C2
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      FUELPW1
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      20
+      ECU_ADDRESS                       0x30BA
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      FUELPW2
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      20
+      ECU_ADDRESS                       0x30BC
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      LamWO2
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       0xLd
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      LAMBDA1
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@LAMBDA1@
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      AFR1
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@AFR1@
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      O2%1
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@O2%1@
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      TEMP1
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@TEMP1@
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      LAMBDA2
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@LAMBDA2@
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      AFR2
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@AFR2@
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      O2%2
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@O2%2@
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      TEMP2
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@TEMP2@
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      TA
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@TA@
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      TE
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@TE@
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      PA
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@PA@
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+      /* Name                   */      PE
+      /* Long identifier        */      ""
+      /* Data type              */      UWORD
+      /* Conversion method      */      COMPU_METHOD_3
+      /* Resolution (Not used)  */      0
+      /* Accuracy (Not used)    */      0
+      /* Lower limit            */      0
+      /* Upper limit            */      16
+      ECU_ADDRESS                       @MemoryAddress@PE@
+    /end MEASUREMENT 
+ 
+
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_1
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_2
+      /* Long identifier        */      "Q = V*5.333333"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 5.333333 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_3
+      /* Long identifier        */      "Q = V*42.666667"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 42.666667 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_4
+      /* Long identifier        */      "Q = V*128.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 128.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_5
+      /* Long identifier        */      "Q = (V+40.000000)/1.250000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "DegC"
+      /* Coefficients           */      COEFFS 0 1.000000 40.000000 0 0 1.250000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_6
+      /* Long identifier        */      "Q = V*32.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 32.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_7
+      /* Long identifier        */      "Q = V*32768.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "-"
+      /* Coefficients           */      COEFFS 0 32768.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_8
+      /* Long identifier        */      "Q = V*25.600000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "hPa"
+      /* Coefficients           */      COEFFS 0 25.600000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_9
+      /* Long identifier        */      "Q = V*4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Rpm"
+      /* Coefficients           */      COEFFS 0 4.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_10
+      /* Long identifier        */      "Q = V*655.360000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 655.360000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_11
+      /* Long identifier        */      "Q = V*1.333333"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "CrA"
+      /* Coefficients           */      COEFFS 0 1.333333 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_12
+      /* Long identifier        */      "Q = V*1.333333"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 1.333333 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_13
+      /* Long identifier        */      "Q = V/60.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Rpm"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 60.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_14
+      /* Long identifier        */      "Q = V*16384.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "-"
+      /* Coefficients           */      COEFFS 0 16384.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_15
+      /* Long identifier        */      "Q = V*819.200000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "V"
+      /* Coefficients           */      COEFFS 0 819.200000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_16
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_17
+      /* Long identifier        */      "Q = V/10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "hPa"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 10.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_18
+      /* Long identifier        */      "Q = V*100.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_19
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "V"
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_20
+      /* Long identifier        */      "Q = V*50.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 50.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_21
+      /* Long identifier        */      "Q = V/60.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "rpm"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 60.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_22
+      /* Long identifier        */      "Q = V/4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "CrA "
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 4.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_23
+      /* Long identifier        */      "Q = V*1.333333"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "% "
+      /* Coefficients           */      COEFFS 0 1.333333 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_24
+      /* Long identifier        */      "Q = V/4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "CrA"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 4.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_25
+      /* Long identifier        */      "Q = V*256.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 256.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_26
+      /* Long identifier        */      "Q = V*2.560000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 2.560000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_27
+      /* Long identifier        */      "Q = V*128.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "CrA"
+      /* Coefficients           */      COEFFS 0 128.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_28
+      /* Long identifier        */      "Q = V*16384.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 16384.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_29
+      /* Long identifier        */      "Q = V*327.680000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 327.680000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_30
+      /* Long identifier        */      "Q = V*4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "RPM"
+      /* Coefficients           */      COEFFS 0 4.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_31
+      /* Long identifier        */      "Q = V*100.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "S"
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_32
+      /* Long identifier        */      "Q = V/60.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "S"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 60.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_33
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "s"
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_34
+      /* Long identifier        */      "Q = V*4096.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "-"
+      /* Coefficients           */      COEFFS 0 4096.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_35
+      /* Long identifier        */      "Q = V/16.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Rpm/s"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 16.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_36
+      /* Long identifier        */      "Q = V*50.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "s"
+      /* Coefficients           */      COEFFS 0 50.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_37
+      /* Long identifier        */      "Q = V*50.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 50.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_38
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "us"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_39
+      /* Long identifier        */      "Q = V*7.812500"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 7.812500 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_40
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_41
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "s"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_42
+      /* Long identifier        */      "Q = V*32768.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 32768.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_43
+      /* Long identifier        */      "Q = V*4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 4.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_44
+      /* Long identifier        */      "Q = V/1.250000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "DegC"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 1.250000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_45
+      /* Long identifier        */      "Q = V*1280.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "DegC"
+      /* Coefficients           */      COEFFS 0 1280.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_46
+      /* Long identifier        */      "Q = V/6.144000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "kg/h"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 6.144000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_47
+      /* Long identifier        */      "Q = (V+50.000000)/5.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "DegC"
+      /* Coefficients           */      COEFFS 0 1.000000 50.000000 0 0 5.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_48
+      /* Long identifier        */      "Q = (V+40.000000)/1.250000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "deg C"
+      /* Coefficients           */      COEFFS 0 1.000000 40.000000 0 0 1.250000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_49
+      /* Long identifier        */      "Q = V*256.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "DegC"
+      /* Coefficients           */      COEFFS 0 256.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_50
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "DegC"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_51
+      /* Long identifier        */      "Q = V*640.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 640.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_52
+      /* Long identifier        */      "Q = (V+0.100000)*640.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 640.000000 64.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_53
+      /* Long identifier        */      "Q = V/5.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "DegC"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 5.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_54
+      /* Long identifier        */      "Q = V*5.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "s"
+      /* Coefficients           */      COEFFS 0 5.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_55
+      /* Long identifier        */      "Q = V*41.666667"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "kg/h"
+      /* Coefficients           */      COEFFS 0 41.666667 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_56
+      /* Long identifier        */      "Q = V/5.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Drg C"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 5.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_57
+      /* Long identifier        */      "Q = V/10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Rpm"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 10.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_58
+      /* Long identifier        */      "Q = V*41.666667"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Kg/h"
+      /* Coefficients           */      COEFFS 0 41.666667 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_59
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "10ms"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_60
+      /* Long identifier        */      "Q = V*4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "rpm"
+      /* Coefficients           */      COEFFS 0 4.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_61
+      /* Long identifier        */      "Q = V*4.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Hz"
+      /* Coefficients           */      COEFFS 0 4.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_62
+      /* Long identifier        */      "Q = V*160.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "V"
+      /* Coefficients           */      COEFFS 0 160.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_63
+      /* Long identifier        */      "Q = V*2000.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 2000.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_64
+      /* Long identifier        */      "Q = V*4096.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 4096.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_65
+      /* Long identifier        */      "Q = V*100.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "s"
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_66
+      /* Long identifier        */      "Q = V*128.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "km/h"
+      /* Coefficients           */      COEFFS 0 128.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_67
+      /* Long identifier        */      "Q = V*2.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Rpm/s"
+      /* Coefficients           */      COEFFS 0 2.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_68
+      /* Long identifier        */      "Q = V*26214.400000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%/hPa"
+      /* Coefficients           */      COEFFS 0 26214.400000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_69
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "mL/dT"
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_70
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "s "
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_71
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "mL"
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_72
+      /* Long identifier        */      "Q = V*13107.200000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "1/s"
+      /* Coefficients           */      COEFFS 0 13107.200000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_73
+      /* Long identifier        */      "Q = V*13107.200000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 13107.200000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_74
+      /* Long identifier        */      "Q = V*64.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "hPa/V"
+      /* Coefficients           */      COEFFS 0 64.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_75
+      /* Long identifier        */      "Q = V*32768.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 32768.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_76
+      /* Long identifier        */      "Q = V*65536.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 65536.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_77
+      /* Long identifier        */      "Q = V*65536.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Kg/L"
+      /* Coefficients           */      COEFFS 0 65536.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_78
+      /* Long identifier        */      "Q = V*12.800000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "hPa"
+      /* Coefficients           */      COEFFS 0 12.800000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_79
+      /* Long identifier        */      "Q = V/60.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "s"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 60.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_80
+      /* Long identifier        */      "Q = V*16.666667"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 16.666667 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_81
+      /* Long identifier        */      "Q = V*16.666667"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "s"
+      /* Coefficients           */      COEFFS 0 16.666667 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_82
+      /* Long identifier        */      "Q = V*1447.649280"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "m"
+      /* Coefficients           */      COEFFS 0 1447.649280 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_83
+      /* Long identifier        */      "Q = V*16384.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "/V"
+      /* Coefficients           */      COEFFS 0 16384.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_84
+      /* Long identifier        */      "Q = V*81920.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "V/%"
+      /* Coefficients           */      COEFFS 0 81920.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_85
+      /* Long identifier        */      "Q = V*838.860800"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "V/ms"
+      /* Coefficients           */      COEFFS 0 838.860800 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_86
+      /* Long identifier        */      "Q = V*200000.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "ms/%"
+      /* Coefficients           */      COEFFS 0 200000.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_87
+      /* Long identifier        */      "Q = V*10000.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "ms/V"
+      /* Coefficients           */      COEFFS 0 10000.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_88
+      /* Long identifier        */      "Q = V*1000.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 1000.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_89
+      /* Long identifier        */      "Q = V*1000.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "s"
+      /* Coefficients           */      COEFFS 0 1000.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_90
+      /* Long identifier        */      "Q = V*1000.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "L"
+      /* Coefficients           */      COEFFS 0 1000.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_91
+      /* Long identifier        */      "Q = V*50.842514"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "cc"
+      /* Coefficients           */      COEFFS 0 50.842514 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_92
+      /* Long identifier        */      "Q = V*218453.333333"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%/hPa"
+      /* Coefficients           */      COEFFS 0 218453.333333 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_93
+      /* Long identifier        */      "Q = V*1024.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "-"
+      /* Coefficients           */      COEFFS 0 1024.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_94
+      /* Long identifier        */      "Q = V*21.333333"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 21.333333 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_95
+      /* Long identifier        */      "Q = V*86.253701"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "g/min"
+      /* Coefficients           */      COEFFS 0 86.253701 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_96
+      /* Long identifier        */      "Q = (V+50.000000)*51.200000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "DegC"
+      /* Coefficients           */      COEFFS 0 51.200000 2560.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_97
+      /* Long identifier        */      "Q = V*150.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "g"
+      /* Coefficients           */      COEFFS 0 150.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_98
+      /* Long identifier        */      "Q = V*170.666667"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 170.666667 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_99
+      /* Long identifier        */      "Q = V*20480.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Lam/V"
+      /* Coefficients           */      COEFFS 0 20480.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_100
+      /* Long identifier        */      "Q = V*1024.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 1024.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_101
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "CrA"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_102
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "-"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_103
+      /* Long identifier        */      "Q = V*128.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "-"
+      /* Coefficients           */      COEFFS 0 128.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_104
+      /* Long identifier        */      "Q = V*1.333333"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Km/h"
+      /* Coefficients           */      COEFFS 0 1.333333 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_105
+      /* Long identifier        */      "Q = V*10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Km/h"
+      /* Coefficients           */      COEFFS 0 10.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_106
+      /* Long identifier        */      "Q = V*2560.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "CrA/Rpm"
+      /* Coefficients           */      COEFFS 0 2560.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_107
+      /* Long identifier        */      "Q = V/10.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "RPM"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 10.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_108
+      /* Long identifier        */      "Q = V/6.144000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Kg/h"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 6.144000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_109
+      /* Long identifier        */      "Q = V/1.250000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Km/h"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 1.250000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_110
+      /* Long identifier        */      "Q = V/1.250000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "s"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 1.250000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_111
+      /* Long identifier        */      "Q = V*36.621094"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Kg"
+      /* Coefficients           */      COEFFS 0 36.621094 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_112
+      /* Long identifier        */      "Q = V*36.621094"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "kg"
+      /* Coefficients           */      COEFFS 0 36.621094 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_113
+      /* Long identifier        */      "Q = V*8.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 8.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_114
+      /* Long identifier        */      "Q = V*170.666667"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 170.666667 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_115
+      /* Long identifier        */      "Q = V/1.245313"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Km/h"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 1.245313
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_116
+      /* Long identifier        */      "Q = V*100.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_117
+      /* Long identifier        */      "Q = (V+0.200000)*191.760300"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "V"
+      /* Coefficients           */      COEFFS 0 191.760300 38.352060 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_118
+      /* Long identifier        */      "Q = V*3.276800"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%/s"
+      /* Coefficients           */      COEFFS 0 3.276800 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_119
+      /* Long identifier        */      "Q = V*20.480000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 20.480000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_120
+      /* Long identifier        */      "Q = V*460.800000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "m"
+      /* Coefficients           */      COEFFS 0 460.800000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_121
+      /* Long identifier        */      "Q = V*78.967622"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "mg"
+      /* Coefficients           */      COEFFS 0 78.967622 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_122
+      /* Long identifier        */      "Q = V*900.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Km"
+      /* Coefficients           */      COEFFS 0 900.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_123
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "g"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_124
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "mL"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_125
+      /* Long identifier        */      "Q = V*2000.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "(kg/h)/(%)"
+      /* Coefficients           */      COEFFS 0 2000.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_126
+      /* Long identifier        */      "Q = V*100.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "g/s"
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_127
+      /* Long identifier        */      "Q = V*256.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "kPa"
+      /* Coefficients           */      COEFFS 0 256.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_128
+      /* Long identifier        */      "Q = V*204.800000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "V"
+      /* Coefficients           */      COEFFS 0 204.800000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_129
+      /* Long identifier        */      "Q = V*128.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Km/h"
+      /* Coefficients           */      COEFFS 0 128.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_130
+      /* Long identifier        */      "Q = V*460.800000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "m/s"
+      /* Coefficients           */      COEFFS 0 460.800000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_131
+      /* Long identifier        */      "Q = V*1000.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "V"
+      /* Coefficients           */      COEFFS 0 1000.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_132
+      /* Long identifier        */      "Q = V*32768000.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "(kg/h)/(1/min)(%)"
+      /* Coefficients           */      COEFFS 0 32768000.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_133
+      /* Long identifier        */      "Q = V*8192.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 8192.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_134
+      /* Long identifier        */      "Q = V*96000.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "ms/%"
+      /* Coefficients           */      COEFFS 0 96000.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_135
+      /* Long identifier        */      "Q = V*1370.965655"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Kg/Hr"
+      /* Coefficients           */      COEFFS 0 1370.965655 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_136
+      /* Long identifier        */      "Q = V*9375.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "kg"
+      /* Coefficients           */      COEFFS 0 9375.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_137
+      /* Long identifier        */      "Q = V*51.200000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "DegC"
+      /* Coefficients           */      COEFFS 0 51.200000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_138
+      /* Long identifier        */      "Q = V*150.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "g/s"
+      /* Coefficients           */      COEFFS 0 150.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_139
+      /* Long identifier        */      "Q = V*32768.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 32768.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_140
+      /* Long identifier        */      "Q = V*640.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Kg/h"
+      /* Coefficients           */      COEFFS 0 640.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_141
+      /* Long identifier        */      "Q = V*4.608000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "m/s^2"
+      /* Coefficients           */      COEFFS 0 4.608000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_142
+      /* Long identifier        */      "Q = V*2.550039"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 2.550039 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_143
+      /* Long identifier        */      "Q = V*56.250000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Km"
+      /* Coefficients           */      COEFFS 0 56.250000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_144
+      /* Long identifier        */      "Q = V*90.506250"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Mile"
+      /* Coefficients           */      COEFFS 0 90.506250 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_145
+      /* Long identifier        */      "Q = V*23.901401"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "MPG"
+      /* Coefficients           */      COEFFS 0 23.901401 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_146
+      /* Long identifier        */      "Q = V*13.709657"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "L/100Km"
+      /* Coefficients           */      COEFFS 0 13.709657 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_147
+      /* Long identifier        */      "Q = V*95.605604"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Hrs/Kg"
+      /* Coefficients           */      COEFFS 0 95.605604 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_148
+      /* Long identifier        */      "Q = V*95.605604"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Hrs/Lit"
+      /* Coefficients           */      COEFFS 0 95.605604 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_149
+      /* Long identifier        */      "Q = V*4.935476"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "mg/s"
+      /* Coefficients           */      COEFFS 0 4.935476 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_150
+      /* Long identifier        */      "Q = V*1.204950"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "g"
+      /* Coefficients           */      COEFFS 0 1.204950 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_151
+      /* Long identifier        */      "Q = V*47.802802"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Km/Kg"
+      /* Coefficients           */      COEFFS 0 47.802802 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_152
+      /* Long identifier        */      "Q = V*47.802802"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Km/L"
+      /* Coefficients           */      COEFFS 0 47.802802 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_153
+      /* Long identifier        */      "Q = V*47.802802"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "m/g"
+      /* Coefficients           */      COEFFS 0 47.802802 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_154
+      /* Long identifier        */      "Q = V*5175.222058"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "mg/ms"
+      /* Coefficients           */      COEFFS 0 5175.222058 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_155
+      /* Long identifier        */      "Q = V*666.666667"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Kg/h"
+      /* Coefficients           */      COEFFS 0 666.666667 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_156
+      /* Long identifier        */      "Q = V*666.666667"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "kg/h"
+      /* Coefficients           */      COEFFS 0 666.666667 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_157
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Logic"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_158
+      /* Long identifier        */      "Q = V*2.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "CrA"
+      /* Coefficients           */      COEFFS 0 2.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_159
+      /* Long identifier        */      "Q = V*2.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 2.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_160
+      /* Long identifier        */      "Q = V*32.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "-"
+      /* Coefficients           */      COEFFS 0 32.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_161
+      /* Long identifier        */      "Q = V/5.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "hPa"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 5.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_162
+      /* Long identifier        */      "Q = V*100.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_163
+      /* Long identifier        */      "Q = (V+40.000000)/1.000000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "DegC"
+      /* Coefficients           */      COEFFS 0 1.000000 40.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_164
+      /* Long identifier        */      "Q = V*3.276800"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%/S"
+      /* Coefficients           */      COEFFS 0 3.276800 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_165
+      /* Long identifier        */      "Q = V*335544.320000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "%"
+      /* Coefficients           */      COEFFS 0 335544.320000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_166
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "DegC"
+      /* Coefficients           */      COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_167
+      /* Long identifier        */      "Q = V*655.360000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 655.360000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_168
+      /* Long identifier        */      "Q = V*327.680000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 327.680000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_169
+      /* Long identifier        */      "Q = V*25.600000"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 25.600000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_170
+      /* Long identifier        */      "Q = V*42.666667"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      ""
+      /* Coefficients           */      COEFFS 0 42.666667 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_171
+      /* Long identifier        */      "Q = V"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "ms"
+      /* Coefficients           */      COEFFS 0 1.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_172
+      /* Long identifier        */      "Q = V*100"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "Deg"
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+      /* Name of CompuMethod    */      COMPU_METHOD_173
+      /* Long identifier        */      "Q = V*100"
+      /* Conversion Type        */      RAT_FUNC
+      /* Format                 */      "%0.6f"
+      /* Units                  */      "m/s2"
+      /* Coefficients           */      COEFFS 0 100.000000 0.000000 0 0 1.000000
+    /end COMPU_METHOD
+    
+  /end MODULE
+  
+  
+/end PROJECT
+/* (add any file trailer comments here) */
+/* EOF Controller.a2l */
+r.a2l */

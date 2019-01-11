@@ -1,0 +1,24 @@
+/*
+ * File: C:\ECOTRON\Product\SW\SEA\slprj\ert\_sharedutils\intrp1d_u16u8u16n15_lca_f.h
+ *
+ * Real-Time Workshop code generated for Simulink model Controller.
+ *
+ * Model version                        : 1.0.1
+ * Real-Time Workshop file version      : 6.5  (R2006b)  03-Aug-2006
+ * Real-Time Workshop file generated on : Thu Feb 12 21:48:01 2015
+ * TLC version                          : 6.5 (Aug  3 2006)
+ * C source code generated on           : Thu Feb 12 21:48:03 2015
+ */
+
+#ifndef SHARE_intrp1d_u16u8u16n15_lca_f
+#define SHARE_intrp1d_u16u8u16n15_lca_f
+
+extern uint16_T intrp1d_u16u8u16n15_lca_f(uint8_T bpIndex, uint16_T frac, const
+ uint16_T *const table, uint32_T maxIndex);
+
+#endif
+
+/* File trailer for Real-Time Workshop generated code.
+ *
+ * [EOF]
+ */
